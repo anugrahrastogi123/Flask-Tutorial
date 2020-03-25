@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>My Friends</h1>
+
+    {% if number > 10 %}
+        <p>{{number}} is greater than 10</p>
+    {% else %}
+        <p>{{number}} is smaller than 10</p>
+    {% endif %}
+
+    <!-- for writing Python code - Jinja template -->
+    {% for f in my_friends %}
+        <h2>{{f}}</h2> <!-- to print a variable -->
+    {% endfor %} <!-- to define the end of a loop -->
+
+    <form  action="/submit" method="post">
+      <input type="text" name="username" placeholder="Enter your name">
+      <input type="submit">
+    </form>
+
+    <p> </p>
+
+    <form  action="/add" method="post">
+      <input type="text" name="no1" placeholder="Enter 1st number">
+      <input type="text" name="no2" placeholder="Enter 2nd number">
+      <input type="submit">
+    </form>
+
+    <p> </p>
+
+    <!-- Sending files to the server -->
+    <form  action="/file" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfile">
+      <input type="submit">
+    </form>
+
+  </body>
+</html>
